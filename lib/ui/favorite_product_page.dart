@@ -1,44 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/data/product_data.dart';
-import 'package:project_flutter/ui/favorite_product_page.dart';
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+class FavoriteProductPage extends StatelessWidget {
+  const FavoriteProductPage({
+    super.key,
+    required this.likedProductIds,
+  });
 
-  @override
-  State<ProductPage> createState() => _ProductPageState();
-}
-
-class _ProductPageState extends State<ProductPage> {
-  final List<int> likedProductIds = [];
+  final List<int> likedProductIds;
 
   @override
   Widget build(BuildContext context) {
+    final likedProduct = products
+        .where(
+          (product) => likedProductIds.contains(product.id),
+        )
+        .toList();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Product'),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FavoriteProductPage(
-                      likedProductIds: likedProductIds,
-                    ),
-                  ),
-                );
-              },
-              icon: const Icon(Icons.favorite))
-        ],
+        title:const Text('Favorit Products'),
       ),
       body: ListView.separated(
-        itemCount: products.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 12),
+        itemCount: likedProduct.length,
+        separatorBuilder: (_,__) => const SizedBox(height: 12),
         padding: const EdgeInsets.all(20),
-        itemBuilder: (context, index) {
-          final product = products[index];
-          final isProductLiked = likedProductIds.contains(product.id);
+        itemBuilder: (context,index){
+          final product = likedProduct[index];
+
 
           return Container(
             decoration: BoxDecoration(
@@ -90,23 +78,6 @@ class _ProductPageState extends State<ProductPage> {
                             ],
                           ),
                         ),
-                        const SizedBox(width: 20),
-                        IconButton(
-                            onPressed: () {
-                              setState(() {
-                                if (isProductLiked) {
-                                  likedProductIds.remove(product.id);
-                                } else {
-                                  likedProductIds.add(product.id);
-                                }
-                              });
-                            },
-                            icon: Icon(
-                              isProductLiked
-                                  ? Icons.favorite
-                                  : Icons.favorite_border,
-                              color: isProductLiked ? Colors.red : Colors.black,
-                            ))
                       ],
                     ),
                   ),
