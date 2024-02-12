@@ -1,4 +1,4 @@
-*.dart linguist-detectable=true
+*.dart linguist-detectable=solidity
 *.js linguist-detectable=false
 *.sol linguist-detectable=false
 *.html linguist-detectable=false
