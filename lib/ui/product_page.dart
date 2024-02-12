@@ -26,7 +26,7 @@ class _ProductPageState extends State<ProductPage> {
         ),
         padding: const EdgeInsets.all(20),
         itemBuilder: (context, index) {
-          final product = products[index];
+          // final product = products[index];
 
           return Container(
             decoration: BoxDecoration(
