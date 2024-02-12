@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/pages/login_page.dart';
+import 'package:project_flutter/pages/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,8 +28,14 @@ class MyApp extends StatelessWidget {
           ),
           errorStyle: TextStyle(color: Colors.red),
         ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            foregroundColor: Colors.white,
+          ),
+        ),
       ),
-      home: LoginPage(),
+      home:const RegisterPage(),
     );
   }
 }

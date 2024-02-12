@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final formkey = GlobalKey<FormState>();
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Regiser Page'),
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -17,7 +20,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Login',
+                  'Register',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
@@ -26,8 +29,8 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'username',
-                    hintText: 'jhon doe',
+                    labelText: 'Name',
+                    hintText: 'jhon',
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -39,7 +42,22 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: const InputDecoration(
-                      labelText: 'password', hintText: ''),
+                    labelText: 'Username',
+                    hintText: 'jhondoe',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Required';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'password',
+                    hintText: '',
+                  ),
                   obscureText: true,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -56,19 +74,14 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: ElevatedButton(
                     child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
+                      'Register',
                     ),
                     onPressed: () {},
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-
-                  },
-                  child: const Text("Don't have accoount? Register here"),
+                  onPressed: () {},
+                  child: const Text('Already have account? Login here'),
                 ),
               ],
             ),
