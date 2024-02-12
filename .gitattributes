@@ -1,5 +1,2 @@
-*.dart linguist-detectable=solidity
-*.js linguist-detectable=false
-*.sol linguist-detectable=false
-*.html linguist-detectable=false
-*.css linguist-detectable=false
+README.md markdown
+main.dart dart
