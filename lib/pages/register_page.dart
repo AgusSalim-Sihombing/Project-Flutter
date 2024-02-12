@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_flutter/pages/login_page.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -80,7 +81,15 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const LoginPage(),
+                      ),
+                        (route) => false,
+                    );
+                  },
                   child: const Text('Already have account? Login here'),
                 ),
               ],

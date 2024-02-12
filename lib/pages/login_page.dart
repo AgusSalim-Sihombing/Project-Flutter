@@ -9,6 +9,9 @@ class LoginPage extends StatelessWidget {
     final formkey = GlobalKey<FormState>();
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Hey There..'),
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
