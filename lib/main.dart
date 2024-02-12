@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/pages/login_page.dart';
-import 'package:project_flutter/pages/register_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home:const RegisterPage(),
+      home:const LoginPage(),
     );
   }
 }
