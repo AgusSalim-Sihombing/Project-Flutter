@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:project_flutter/pages/home_page.dart';
 import 'package:project_flutter/pages/register_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    final formkey = GlobalKey<FormState>();
+
+    final formKey = GlobalKey<FormState>();
 
     return Scaffold(
       appBar: AppBar(
@@ -16,7 +27,7 @@ class LoginPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Form(
-            key: formkey,
+            key: formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -29,6 +40,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
+                  controller: usernameController,
                   decoration: const InputDecoration(
                     labelText: 'username',
                     hintText: 'jhon doe',
@@ -42,6 +54,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
+                  controller: passwordController,
                   decoration: const InputDecoration(
                       labelText: 'password', hintText: ''),
                   obscureText: true,
@@ -53,21 +66,7 @@ class LoginPage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 20),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                  ),
-                  child: ElevatedButton(
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
+                _FormAction(formKey), //diambil atau diekstrak dari class _FormAction
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -87,3 +86,43 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+class _FormAction extends StatelessWidget {
+  const _FormAction(this.formKey);
+
+  final GlobalKey<FormState> formKey;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(
+        vertical: 20,
+      ),
+      child: ElevatedButton(
+        child: const Text(
+          'Login',
+          style: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+        onPressed: () {
+          if(formKey.currentState!.validate()) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: const Text('Succesfully Login'),
+                action: SnackBarAction(
+                  label: 'Ok',
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const HomePage(),), (route) => false);
+                  },
+                ),
+              )
+            );
+          }
+        },
+      ),
+    );
+  }
+}
+

@@ -7,6 +7,11 @@ In branch **main** there is the UI source code for a login and registration page
 
 <img height="500px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/9b59375b-5046-4025-a7aa-1613db46b84c"/>
 
+# Validasi
+
+when the login and register buttons are pressed and the form is empty it will run the state and the TextFormField will be red indicating Required
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
