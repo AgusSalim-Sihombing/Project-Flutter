@@ -1,12 +1,11 @@
 # project_flutter
 
-Pada cabang main terdapat source code untuk membuat halaman login polos yang sudah
-dilengkapi dengan validasi
+In branch **main** there is the UI source code for a login and registration page complete with validation.
 
 # Screenshoot
-<img height="300px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/0fb7503d-a63c-42d2-94ee-d028d1ac5af5"/>
+<img height="500px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/0fb7503d-a63c-42d2-94ee-d028d1ac5af5"/>
 
-<img height="300px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/9b59375b-5046-4025-a7aa-1613db46b84c"/>
+<img height="500px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/9b59375b-5046-4025-a7aa-1613db46b84c"/>
 
 ## Getting Started
 
