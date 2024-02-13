@@ -4,9 +4,9 @@ Pada cabang main terdapat source code untuk membuat halaman login polos yang sud
 dilengkapi dengan validasi
 
 # Screenshoot
-<img src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/0fb7503d-a63c-42d2-94ee-d028d1ac5af5"/>
+<img height="300px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/0fb7503d-a63c-42d2-94ee-d028d1ac5af5"/>
 
-<img src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/9b59375b-5046-4025-a7aa-1613db46b84c"/>
+<img height="300px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/9b59375b-5046-4025-a7aa-1613db46b84c"/>
 
 ## Getting Started
 
