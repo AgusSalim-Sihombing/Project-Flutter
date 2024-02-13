@@ -1,6 +1,7 @@
 # project_flutter
 
-A new Flutter project.
+Pada cabang main terdapat source code untuk membuat halaman login polos yang sudah
+dilengkapi dengan validasi
 
 ## Getting Started
 
