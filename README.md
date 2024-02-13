@@ -8,11 +8,11 @@ In branch **main** there is the UI source code for a login and registration page
 <img height="500px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/9b59375b-5046-4025-a7aa-1613db46b84c"/>
 
 # Validation
-when the login and register buttons are pressed and the form is empty it will run the state and the TextFormField will be red indicating Required
 
 <img height="500px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/5c266873-e09c-46df-8c29-56484dc562d6"/>
 <img height="500px" src="https://github.com/AgusSalim-Sihombing/Project-Flutter/assets/130387546/dff21fee-8d7e-4b39-8deb-2531e7dadef5"/>
 
+when the login and register buttons are pressed and the form is empty it will run the state and the TextFormField will be red indicating Required
 
 ## Getting Started
 
